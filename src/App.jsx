@@ -12,20 +12,22 @@ import Error from './components/error/Error'
 
 function App() {
   return (
-    <Router>
-      <Nav />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/collections' element={<Collections />}></Route>
-        <Route path='/genres' element={<Genres />}></Route>
-        <Route path='/movies' element={<Movies />}></Route>
-        <Route path='/people' element={<People />}></Route>
-        <Route path='/search' element={<Search />}></Route>
-        <Route path='/trending' element={<Trending />}></Route>
-        <Route path='/tv' element={<Tv />}></Route>
-        <Route path='*' element={<Error />}></Route>
-      </Routes>
-    </Router>
+    <main className='body'>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/collections' element={<Collections />}></Route>
+          <Route path='/genres' element={<Genres />}></Route>
+          <Route path='/movies' element={<Movies />}></Route>
+          <Route path='/people' element={<People />}></Route>
+          <Route path='/search' element={<Search />}></Route>
+          <Route path='/trending' element={<Trending />}></Route>
+          <Route path='/tv' element={<Tv />}></Route>
+          <Route path='*' element={<Error />}></Route>
+        </Routes>
+      </Router>
+    </main>
   )
 }
 
