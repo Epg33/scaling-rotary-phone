@@ -1,6 +1,6 @@
 import style from './nav.module.css'
 import { NavLink } from 'react-router-dom'
-import {BsFillCollectionPlayFill, BsFillHouseFill, BsCameraReelsFill, BsPeopleFill, BsDisplayFill} from 'react-icons/bs'
+import { BsFillHouseFill, BsCameraReelsFill, BsPeopleFill, BsDisplayFill} from 'react-icons/bs'
 import {BiSearchAlt, BiTrendingUp} from 'react-icons/bi'
 import {MdCategory} from 'react-icons/md'
 
@@ -8,7 +8,6 @@ function Nav() {
   return (
     <nav className={style.nav}>
       <NavLink className={style.link} to='/'><BsFillHouseFill /></NavLink>
-      <NavLink className={style.link} to='/collections'><BsFillCollectionPlayFill /></NavLink>
       <NavLink className={style.link} to='/genres'><MdCategory /></NavLink>
       <NavLink className={style.link} to='/movies'><BsCameraReelsFill /></NavLink>
       <NavLink className={style.link} to='/people'><BsPeopleFill /></NavLink>

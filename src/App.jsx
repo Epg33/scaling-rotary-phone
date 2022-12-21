@@ -1,5 +1,4 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Collections from './components/collections/Collections.jsx'
 import Home from './components/home/Home.jsx'
 import Nav from './components/navbar/Nav.jsx'
 import Genres from './components/genres/Genres.jsx'
@@ -17,7 +16,6 @@ function App() {
         <Nav />
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          <Route path='/collections' element={<Collections />}></Route>
           <Route path='/genres' element={<Genres />}></Route>
           <Route path='/movies' element={<Movies />}></Route>
           <Route path='/people' element={<People />}></Route>
