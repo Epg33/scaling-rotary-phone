@@ -25,8 +25,8 @@ function Movies() {
   useEffect(()=>{
     const change = event => {
       if(window.scrollY> container.current.offsetHeight*0.85){
-        setNumPage(numPage+2)
-        console.log(container)
+        setNumPage(numPage+1)
+        console.log(content)
       }
     }
     window.addEventListener('scroll', change)
@@ -35,12 +35,13 @@ function Movies() {
 
   if(!content) return <Loading />
   return (
-    <div ref={container}>
+    <div className={style.movies_container} ref={container}>
       {
         content.map((movie, index)=>{
-          return <div key={movie.id}>
-            <h3>{index+1}. {movie.title}</h3>
-            <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.backdrop_path}`} />
+          return <div key={index} className={style.movie}>
+            <h3 className={style.title}>{index+1}. {movie.title}</h3>
+            <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} />
+            <p>{movie.overview}</p>
             <span><AiFillStar/> {movie.vote_average}/10</span>
           </div>
         })

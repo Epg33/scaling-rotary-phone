@@ -1,0 +1,43 @@
+.movies_container {
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5vw;
+  grid-auto-rows: 80vh;
+  place-items: center;
+}
+
+.movie {
+  background-image: linear-gradient(180deg, #eee, #ddd);
+  height: 65vh;
+  width: 25vw;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie img {
+  height: 70%;
+  width: 90%;
+}
+
+.movie p{
+  height: 60%;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie:nth-child(1) {
+  grid-column: span 3;
+  grid-row: span 1.3;
+}
+
+.movie:nth-child(1) img {
+  height: 70vh;
+  width: 30vw;
+}
