@@ -1,3 +1,4 @@
+import InfiniteScroll from 'react-infinite-scroll-component'
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'
 import {AiFillStar} from 'react-icons/ai'
