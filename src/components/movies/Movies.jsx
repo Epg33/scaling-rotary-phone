@@ -8,10 +8,6 @@ function Movies() {
   const [content, setContent] = useState();
   const [numPage, setNumPage] = useState(1)
   const container = useRef()
-
-
-
-  const observer = new IntersectionObserver()
   
   const fetchingMovies = async (page) => {
     const res = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US&page=${page}`)
@@ -20,11 +16,6 @@ function Movies() {
     if(!content) setContent(data);
     else setContent((cont)=>[...cont, data]);
   }
-  
-  useEffect(()=>{
-    fetchingMovies(numPage)
-    console.log(container)
-  }, [numPage])
 
   useEffect(()=>{
     const change = event => {
@@ -36,6 +27,11 @@ function Movies() {
     window.addEventListener('scroll', change)
     return ()=>{ window.removeEventListener('scroll', change)}
   }, [])
+  
+  useEffect(()=>{
+    fetchingMovies(numPage)
+    console.log(container)
+  }, [numPage])
 
   // setTimeout(()=>{
   //   console.log(container.current.parentElement)
@@ -49,10 +45,10 @@ function Movies() {
 
   if(!content) return <Loading />
   return (
-    <div className={style.movies_container} ref={container}>
+    <div className={style.movies_container} ref={container} >
       {
         content.map((movie, index)=>{
-          return <div key={index} className={style.movie} onFocus={()=>index === content.length-1 ? login() : null}>
+          return <div key={index} className={style.movie}>
             <h3 className={style.title}>{index+1}. {movie.title}</h3>
             <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} />
             <p>{movie.overview}</p>
