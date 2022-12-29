@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.movie img {
+.movie img, .movie .default {
   height: 70%;
   width: 90%;
 }
