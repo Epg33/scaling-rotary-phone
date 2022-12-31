@@ -1,31 +1,25 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import {AiFillStar} from 'react-icons/ai'
 import {BsCameraReelsFill} from 'react-icons/bs'
 import style from './movies.module.css'
 import Loading from '../loading/Loading'
 import { InView } from 'react-intersection-observer'
+import { fetchingMovies } from '../../services/fetch'
 
 function Movies() {
   const [content, setContent] = useState();
   const [numPage, setNumPage] = useState(1)
-  
-  const fetchingMovies = async (page) => {
-    const res = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US&page=${page}`)
-    const data = await res.data.results;
-    if(!content) return await  data;
-    return [...content, data]
-  }
 
   useEffect(()=>{
     const trying = async () => {
-      const res = await fetchingMovies(numPage)
+      const res = await fetchingMovies(content, numPage)
+      console.log(res);
       setContent([...res])
     }
     trying()  
   }, [numPage])
 
-  if(!content) return <Loading />
+  if(!content) return <div className={style.loading_container}><Loading /></div>
   return (
     <section className={style.movies_container}>
         {
@@ -33,24 +27,32 @@ function Movies() {
             if(index>19){
               return movie.map((peli, index)=>{
                 return <div key={index} className={style.movie}>
-                  <h3 className={style.title}>{peli.title}</h3>
                   {peli.poster_path ? <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${peli.poster_path}`} /> 
                   : <BsCameraReelsFill className={style.default}/>}
-                  <p>{peli.overview}</p>
-                  <span><AiFillStar/> {peli.vote_average}/10</span>
+                  <div className={style.info}>
+                    <h3 className={style.title}>{peli.title}</h3>
+                    <p>
+                      <span><AiFillStar/> {peli.vote_average}/10</span> &nbsp; &nbsp;
+                      {peli.release_date}
+                    </p>
+                  </div>
                 </div>
               })
             }
             return <div key={index} className={style.movie}>
-              <h3 className={style.title}>{movie.title}</h3>
               {movie.poster_path ? <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} /> 
               : <BsCameraReelsFill className={style.default}/>}
-              <p>{movie.overview}</p>
-              <span><AiFillStar/> {movie.vote_average}/10</span>
+              <div className={style.info}>
+                <h3 className={style.title}>{movie.title}</h3>
+                <p>
+                  <span><AiFillStar/> {movie.vote_average}/10</span> &nbsp; &nbsp;
+                  {movie.release_date}
+                </p>
+              </div>
             </div>
           })
         }
-      <InView as='div' onChange={(inView, entry)=>{inView ? setNumPage(numPage+1) : null;console.log(inView, entry)}}>
+      <InView as='div' onChange={(inView, entry)=>{inView ? setNumPage(numPage+1) : null;}}>
         <Loading />
       </InView>
     </section>
