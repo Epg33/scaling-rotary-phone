@@ -1,9 +1,11 @@
-import style from './loading.module.css'
+import style from "./loading.module.css";
 
 function Loading() {
   return (
-    <h1>Loading</h1>
-  )
+    <svg className={style.svg} viewBox="25 25 50 50">
+      <circle className={style.circle} r={20} cy={50} cx={50}></circle>
+    </svg>
+  );
 }
 
-export default Loading
+export default Loading;

@@ -1,6 +1,6 @@
-/* .movies_container::-webkit-scrollbar {
+.movies_container::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .movies_container {
   width: 100%;
@@ -11,6 +11,7 @@
   gap: 1.5vw;
   grid-auto-rows: 80vh;
   place-items: center;
+  scroll-behavior: smooth;
 }
 
 .movie {

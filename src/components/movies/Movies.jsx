@@ -27,7 +27,7 @@ function Movies() {
 
   if(!content) return <Loading />
   return (
-    <section style={{display: 'flex', flexDirection: 'column'}}>
+    <section className={style.movies_container}>
         {
           content.map((movie, index)=>{
             if(index>19){
@@ -51,7 +51,7 @@ function Movies() {
           })
         }
       <InView as='div' onChange={(inView, entry)=>{inView ? setNumPage(numPage+1) : null;console.log(inView, entry)}}>
-        <footer>footer</footer>
+        <Loading />
       </InView>
     </section>
   )
