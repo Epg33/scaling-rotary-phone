@@ -17,7 +17,7 @@ function App() {
     <main className='body'>
       <Router>
         <Nav />
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<div style={{height: '100vh', width: '100vw', backgroundColor: '#012', display: 'grid', placeContent: 'center'}}><Loading /></div>}>
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/genres' element={<Genres />}></Route>
