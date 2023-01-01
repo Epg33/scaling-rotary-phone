@@ -38,7 +38,7 @@
   overflow: hidden;
 }
 
-.movie img, .movie .default {
+.movie img, .movie .default svg {
   height: 100%;
   width: 100%;
   z-index: 1;
