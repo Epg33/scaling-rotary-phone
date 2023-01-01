@@ -27,7 +27,7 @@ function Movies() {
             if(index>19){
               return movie.map((peli, index)=>{
                 return <div key={index} className={style.movie}>
-                  {peli.poster_path ? <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${peli.poster_path}`} /> 
+                  {peli.poster_path ? <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${peli.poster_path}`} alt={`poster for the ${peli.title} movie`}/> 
                   : <BsCameraReelsFill className={style.default}/>}
                   <div className={style.info}>
                     <h3 className={style.title}>{peli.title}</h3>
@@ -40,7 +40,7 @@ function Movies() {
               })
             }
             return <div key={index} className={style.movie}>
-              {movie.poster_path ? <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} /> 
+              {movie.poster_path ? <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} alt={`poster for the ${movie.title} movie`}/> 
               : <BsCameraReelsFill className={style.default}/>}
               <div className={style.info}>
                 <h3 className={style.title}>{movie.title}</h3>
