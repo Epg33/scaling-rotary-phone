@@ -22,10 +22,10 @@ function Movies() {
   return (
     <section className={style.body}>
       <nav className={style.nav}>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('now_playing')}}>Now Playing</button>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('upcoming')}}>Upcoming</button>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('popular')}}>Popular</button>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('top_rated')}}>Top Rated</button>
+        <button className={style.nav_button} onClick={()=>{setContent(null);setNumPage(1);setQuery('now_playing')}}>Now Playing</button>
+        <button className={style.nav_button} onClick={()=>{setContent(null);setNumPage(1);setQuery('upcoming')}}>Upcoming</button>
+        <button className={style.nav_button} onClick={()=>{setContent(null);setNumPage(1);setQuery('popular')}}>Popular</button>
+        <button className={style.nav_button} onClick={()=>{setContent(null);setNumPage(1);setQuery('top_rated')}}>Top Rated</button>
       </nav>
       <div className={style.movies_container}>
           {

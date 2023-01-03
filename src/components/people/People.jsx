@@ -11,7 +11,6 @@ function People() {
   useEffect(()=>{
     const fetching = async ()=>{
       const res = await fetchingPeople(content, page);
-      console.log(res);
       setContent([...res])
     }
     fetching()
