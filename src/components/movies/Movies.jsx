@@ -20,14 +20,14 @@ function Movies() {
 
   if(!content) return <div className={style.loading_container}><Loading /></div>
   return (
-    <>
+    <section className={style.body}>
       <nav className={style.nav}>
         <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('now_playing')}}>Now Playing</button>
         <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('upcoming')}}>Upcoming</button>
         <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('popular')}}>Popular</button>
         <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('top_rated')}}>Top Rated</button>
       </nav>
-      <section className={style.movies_container}>
+      <div className={style.movies_container}>
           {
             content.map((movie, index)=>{
               if(index>19){
@@ -41,8 +41,8 @@ function Movies() {
         <InView as='div' onChange={(inView, entry)=>{inView ? setNumPage(numPage+1) : null;}}>
           <Loading />
         </InView>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 
