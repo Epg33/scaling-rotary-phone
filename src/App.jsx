@@ -10,6 +10,9 @@ const People = lazy(()=>import('./components/People/People.jsx'))
 const Search = lazy(()=>import('./components/Search/Search.jsx'))
 const Trending = lazy(()=>import('./components/Trending/Trending.jsx'))
 const Tv = lazy(()=>import('./components/Tv/Tv.jsx'))
+const Movie = lazy(()=>import('./components/unique/movie/Movie'))
+const Person = lazy(()=>import('./components/unique/person/Person'))
+const Show = lazy(()=>import('./components/unique/show/Show'))
 const Error = lazy(()=>import('./components/error/Error'))
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
             <Route path='/search' element={<Search />}></Route>
             <Route path='/trending' element={<Trending />}></Route>
             <Route path='/tv' element={<Tv />}></Route>
+            <Route path='/tv/:id' element={<Show />}></Route>
+            <Route path='/movies/:id' element={<Movie />}></Route>
+            <Route path='/people/:id' element={<Person />}></Route>
             <Route path='*' element={<Error />}></Route>
           </Routes>
         </Suspense>
