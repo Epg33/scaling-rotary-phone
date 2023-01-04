@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { fetchingPeople } from '../../services/fetch';
 import Loading from '../loading/Loading'
 import { InView } from 'react-intersection-observer'
+import PeopleCards from '../cards/PeopleCards';
 
 function People() {
   const [content, setContent] = useState();
@@ -23,17 +24,9 @@ function People() {
           {
             content.map((person, index)=>{
               if(index>19) {return person.map((per, indx)=>{
-                return <div key={per.id}>
-                  <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${per.profile_path}`} alt="" />
-                  <h3>{per.name}</h3>
-                  <span>{per.known_for_department}</span>
-              </div>
+                return <PeopleCards per={{per}} key={indx} />
               })}
-              return <div key={person.id}>
-                <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${person.profile_path}`} alt="" />
-                <h3>{person.name}</h3>
-                <span>{person.known_for_department}</span>
-              </div>
+              return <PeopleCards person={{person}} key={index} />
             })
           }
           <InView as='div' onChange={(inView, entry)=>{inView ? setPage(page+1) : null;}}>

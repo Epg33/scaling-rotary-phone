@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { InView } from "react-intersection-observer";
 import { searching } from "../../services/fetch";
 import Cards from '../cards/Cards'
+import PeopleCards from '../cards/PeopleCards'
 import Loading from '../loading/Loading'
 
 function Search() {
@@ -36,8 +37,10 @@ function Search() {
         {
           content.map((movie, index)=>{
             if(index>19) {return movie.map((peli, indx)=>{
+              if(peli.gender) {const per = peli; return <PeopleCards per={{per}} key={indx} />}
               return <Cards peli={{peli}} key={indx} />
             })}
+            if(movie.gender) {const person = movie; return <PeopleCards person={{person}} key={index} />}
             return <Cards movie={{movie}} key={index}/>
           })
         }
