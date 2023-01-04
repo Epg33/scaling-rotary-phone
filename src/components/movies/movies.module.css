@@ -33,3 +33,7 @@
   scroll-behavior: smooth;
   padding-top: 5%;
 }
+
+.nav_button {
+  color: #111;
+}

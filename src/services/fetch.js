@@ -18,11 +18,20 @@ export const fetchingPeople = async (content, page) => {
   return [...content, data];
 };
 
-export const searching = async (content, page, query) => {
+export const searching = async (content, page, type, query) => {
   const res = await axios.get(
-    `https://api.themoviedb.org/3/search/multi?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US&query=${query}&page=${page}&include_adult=false`
+    `https://api.themoviedb.org/3/search/${type}?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US&query=${query}&page=${page}&include_adult=false`
   );
   const data = await res.data.results;
   if (!content) return await data;
   return [...content, data];
 };
+
+export const fetchingTrends = async (content, page, type, time) => {
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/trending/${type}/${time}?api_key=5433a58ed58a7253f675b66bb885524d&page=${page}`
+  );
+  const data = await res.data.results;
+  if (!content) return await data;
+  return [...content, data];
+}

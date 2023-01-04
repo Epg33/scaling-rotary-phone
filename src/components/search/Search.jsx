@@ -9,17 +9,18 @@ import Loading from '../loading/Loading'
 function Search() {
   const [content, setContent] = useState();
   const [page, setPage] = useState(1);
+  const [type, setType] = useState('multi')
   const [query, setQuery] = useState('marvel')
   const queryText = useRef();
 
   useEffect(()=>{
     const fetching = async () => {
-      const res = await searching(content, page, query);
+      const res = await searching(content, page, type, query);
       console.log(res);
       setContent([...res]);
     };
     fetching();
-  }, [query, page])
+  }, [query, page, type])
 
   if(!content) return <div className={style.loading_container}><Loading /></div>
   return (
@@ -29,9 +30,9 @@ function Search() {
           <input type="text" ref={queryText}/>
           <button onClick={()=>{setContent(null);setPage(1);setQuery(queryText.current.value)}}>Search</button>
         </div>
-        <button></button>
-        <button></button>
-        <button></button>
+        <button onClick={()=>{setContent(null);setPage(1);setType('multi')}}>All</button>
+        <button onClick={()=>{setContent(null);setPage(1);setType('movie')}}>Only Movies </button>
+        <button onClick={()=>{setContent(null);setPage(1);setType('tv')}}>Only TV</button>
       </nav>
       <div className={style.content_container}>
         {
@@ -44,7 +45,7 @@ function Search() {
             return <Cards movie={{movie}} key={index}/>
           })
         }
-        <InView as='div'  onChange={(inView, entry)=>{inView ? setPage(page+1) : null;}}>
+        <InView as='div' onChange={(inView, entry)=>{inView ? setPage(page+1) : null;}}>
           <Loading />
         </InView>
       </div>
