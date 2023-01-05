@@ -44,20 +44,21 @@
 .nav_button {
   color: rgb(255 255 255);
   height: 100%;
-  width: 30rem;
+  width: 25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   background-color: transparent;
   border: none;
-  transition: all 0.5s ease-in;
+  transition: all 0.5s ease;
 }
-.nav:hover{
+.nav_button:hover{
   height: 100%;
   width: 20rem;
   background-color: aqua;
 }
 .nav_button:active{
   background-color: rosybrown;
+  transition: all .1s ease-in;
 }
