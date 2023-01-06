@@ -19,7 +19,13 @@ const Person = () => {
   return (
     <>
       <section>
-        <img src="" alt="" />
+        <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${content.profile_path}`} alt={`profile of ${content.name}`} />
+        <h2>{content.name}</h2>
+        <p>{content.biography}</p>
+        <p>birthday: {content.birthday}</p>
+        {content.deathday? <span>{content.deathday}</span>: null}
+        <p>{content.gender === 1 ? 'Female' : 'Male'}, known for {content.known_for_department}</p>
+        <span>born in: {content.place_of_birth}</span>
       </section>
     </>
   )

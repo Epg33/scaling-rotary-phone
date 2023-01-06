@@ -6,7 +6,7 @@ import style from './cards.module.css'
 const Cards = ({movie, peli}) => {
   const mov = movie ? movie.movie : peli.peli
   return (
-    <NavLink to={movie ? `/movies/${mov.id}` : `/tv/${mov.id}`} className={style.movie}>
+    <NavLink to={mov.title ? `/movies/${mov.id}` : `/tv/${mov.id}`} className={style.movie}>
       {mov.poster_path ? <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${mov.poster_path}`} alt={`poster for the ${mov.title} movie`}/> 
       : <BsCameraReelsFill className={style.default}/>}
       <div className={style.info}>
