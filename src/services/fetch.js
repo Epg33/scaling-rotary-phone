@@ -35,3 +35,18 @@ export const fetchingTrends = async (content, page, type, time) => {
   if (!content) return await data;
   return [...content, data];
 }
+
+export const fetchEspecificMovie = async ( id ) => {
+  const res = await axios.get(
+    `
+    https://api.themoviedb.org/3/movie/${id}?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US`
+  );
+  return res.data;
+}
+
+export const fetchEspecificPerson = async ( id ) => {
+  const res = await axios.get(
+    `https://api.themoviedb.org/3/person/${id}?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US`
+  )
+  return res.data
+}
