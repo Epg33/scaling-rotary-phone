@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { fetchEspecificMovie } from '../../../services/fetch';
 import Loading from '../../loading/Loading'
+import style from './movie.module.css'
 
 const Movie = () => {
   const params = useParams();
@@ -19,23 +20,33 @@ const Movie = () => {
   if(!content) return <Loading />
   return (
     <>
-      <section>
-        <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${content.poster_path}`}alt="" />
-        <h2>{content.title}</h2>
-        <p>{content.overview}</p>
-        <ul>
-          {content.genres.map((genre, i)=>{
-            return <li key={i}>{genre.name}</li>
-          })}
-        </ul>
-        <span>Rate: {content.vote_average}</span>
-        <span>Release Date: {content.release_date}</span>
-        <p>budget: {content.budget} Revenue: {content.revenue}</p>
-        <ul>production companies:
-          {content.production_companies.map((comp, i)=>{
-            return <li key={i}>{comp.name}</li>
-          })}
-        </ul>
+      <section className={style.body}>
+        <img src={`https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${content.backdrop_path}`} className={style.bg_image} alt={`backdrop image of ${content.title}`} />
+        <img src={`https://www.themoviedb.org/t/p/w300_and_h450_face${content.poster_path}`} alt={`poster image of ${content.title}`} />
+        <div className={style.info}>
+          <h2>{content.title}</h2>
+          <div className={style.dg_info}>
+            <span>Release Date: {content.release_date}</span>
+            <ul>
+              {content.genres.map((genre, i)=>{
+                return <li key={i}>{genre.name}</li>
+              })}
+            </ul>
+          </div>
+          <div className={style.aceptation}>
+            <span>{content.vote_average.toFixed(1)*10}%</span>
+            <p>budget: {content.budget} Revenue: {content.revenue}</p>
+          </div>
+          <div className={style.resume}>
+            <h3>Resume</h3>
+            <p>{content.overview}</p>
+          </div>
+          <ul>production companies:
+            {content.production_companies.map((comp, i)=>{
+              return <li key={i}>{comp.name}</li>
+            })}
+          </ul>
+        </div>
       </section>
     </>
   )
