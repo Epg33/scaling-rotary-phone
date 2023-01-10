@@ -48,7 +48,10 @@ export const fetchEspecificPerson = async ( id ) => {
   const res = await axios.get(
     `https://api.themoviedb.org/3/person/${id}?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US`
   )
-  return res.data
+  const aditionalInfo = await axios.get(
+    `https://api.themoviedb.org/3/person/${id}/movie_credits?api_key=5433a58ed58a7253f675b66bb885524d&language=en-US`
+  )
+  return [res.data, aditionalInfo]
 }
 
 export const fetchEspecificShow = async ( id ) => {
