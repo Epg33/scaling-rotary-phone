@@ -1,0 +1,13 @@
+.cell-navBar {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  .navBar {
+    display: none;
+  }
+  .cell-navBar {
+    display: block;
+    position: absolute;
+  }
+}

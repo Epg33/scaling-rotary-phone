@@ -1,9 +1,11 @@
 import { lazy, Suspense } from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Loading from './components/loading/Loading.jsx'
+import './App.css'
 
 const Home = lazy(()=>import('./components/home/Home.jsx'))
 const Nav = lazy(()=>import('./components/navbar/Nav.jsx'))
+const CellNav = lazy(()=>import('./components/navbar/CellNav.jsx'))
 const Genres = lazy(()=>import('./components/genres/Genres.jsx'))
 const Movies = lazy(()=>import('./components/Movies/Movies.jsx'))
 const People = lazy(()=>import('./components/People/People.jsx'))
@@ -19,7 +21,12 @@ function App() {
   return (
     <main className='body'>
       <Router>
-        <Nav />
+        <div className='navBar'>
+          <Nav />
+        </div>
+        <div className='cell-navBar'>
+          <CellNav />
+        </div>
         <Suspense fallback={<div style={{height: '100vh', width: '100vw', backgroundColor: '#012', display: 'grid', placeContent: 'center'}}><Loading /></div>}>
           <Routes>
             <Route path='/' element={<Home />}></Route>
