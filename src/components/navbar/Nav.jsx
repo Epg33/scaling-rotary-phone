@@ -7,14 +7,24 @@ import {MdCategory} from 'react-icons/md'
 function Nav() {
   return (
     <nav className={style.nav}>
-      <NavLink className={style.link} to='/'><BsFillHouseFill /></NavLink>
-      <NavLink className={style.link} to='/genres'><MdCategory /></NavLink>
-      <NavLink className={style.link} to='/movies'><BsCameraReelsFill /></NavLink>
-      <NavLink className={style.link} to='/people'><BsPeopleFill /></NavLink>
-      <NavLink className={style.link} to='/search'><BiSearchAlt /></NavLink>
-      <NavLink className={style.link} to='/trending'><BiTrendingUp /></NavLink>
-      <NavLink className={style.link} to='/tv'><BsDisplayFill /></NavLink>
+      <Link icon={<BsFillHouseFill />} to='/' text='Home' />
+      <Link icon={<MdCategory />} to='/genres' text='Genres' />
+      <Link icon={<BsCameraReelsFill />} to='/movies' text='Movies' />
+      <Link icon={<BsPeopleFill />} to='/people' text='People' />
+      <Link icon={<BiSearchAlt />} to='/search' text='Search'/>
+      <Link icon={<BiTrendingUp />} to='/trending' text='Trending' />
+      <Link icon={<BsDisplayFill />} to='/tv' text='Tv' />
     </nav>
+  )
+}
+
+const Link = ({icon, text, to}) => {
+  return (
+    <NavLink to={to} className={style.link}>{icon}
+      <span className={style.link_span}>
+        {text}
+      </span>
+    </NavLink>
   )
 }
 

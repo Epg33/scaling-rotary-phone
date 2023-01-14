@@ -8,20 +8,19 @@
 }
 
 .link {
+  position: relative;
   color: #eee;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease;
-  width: 60px;
-  height: 25px;
+  width: 65px;
+  height: 60px;
 }
 
 .link:hover {
-  background-color: rgb(25, 0, 89);
-  height: 60px;
-  width: 65px;
+  background-color: rgb(25, 0, 89);;
   border-radius: 50%;
   font-size: 28px;
 }
@@ -29,4 +28,24 @@
 .link:active {
   background-color: rgb(89, 0, 0);
   transform: translateY(5px);
+}
+
+.link_span {
+  position: absolute;
+  width: auto;
+  padding: 4px;
+  margin: 4px;
+  min-width: max-content;
+  left: 3.5rem;
+  border-radius: 6px;
+  transition: all 0.1s;
+  transform: scale(0);
+  transform-origin: left;
+  background-color: #eee;
+  font-size: 0.8rem;
+  color: #111;
+}
+
+.link:hover .link_span {
+  transform: scale(1);
 }

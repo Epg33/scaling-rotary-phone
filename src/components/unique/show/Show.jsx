@@ -10,8 +10,7 @@ const Show = () => {
   const [content, setContent] = useState();
   useEffect(()=>{
     const fetching = async () => {
-      const res = await fetchEspecificShow(params.id);
-      console.log(res);
+      const res = await fetchEspecificShow(params.id); 
       setContent(res)
     }
     fetching();
