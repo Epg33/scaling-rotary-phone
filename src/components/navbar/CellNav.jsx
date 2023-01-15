@@ -9,28 +9,25 @@ function CellNav() {
   const [nav, setNav] = useState(style.burguer_container);
 
   const navState = () => {
-    console.log(11111);
     setNav(nav === style.burguer_container ? style.burguer_container_active : style.burguer_container)
-    console.log(nav, 1); 
-    
   }
   return (
     <>
-      <input type="checkbox" className={style.check} name="" id="check" />
-      <label htmlFor="check" className={style.burguer_container}>
+      {/* <input  className={style.check} name="" id="check" /> */}
+      <button onClick={()=>navState()} className={nav}>
         <div className={style.burguer}></div>
         <div className={style.burguer}></div>
         <div className={style.burguer}></div>
-      </label>
+      </button>
       <nav className={style.nav}>
         <h3>React Movies</h3>
-        <NavLink to='/' className={style.NavLink}>Home <BsFillHouseFill /></NavLink>
-        <NavLink to='/' className={style.NavLink}>Genres <MdCategory /></NavLink>
-        <NavLink to='/' className={style.NavLink}>Movies <BsCameraReelsFill /></NavLink>
-        <NavLink to='/' className={style.NavLink}>People <BsPeopleFill /></NavLink>
-        <NavLink to='/' className={style.NavLink}>Search <BiSearchAlt /></NavLink>
-        <NavLink to='/' className={style.NavLink}>Trending <BiTrendingUp /></NavLink>
-        <NavLink to='/' className={style.NavLink}>Tv <BsDisplayFill /></NavLink>
+        <NavLink to='/' className={style.NavLink}><BsFillHouseFill /> &nbsp; &nbsp; Home</NavLink>
+        <NavLink to='/genres' className={style.NavLink}><MdCategory /> &nbsp; &nbsp; Genres</NavLink>
+        <NavLink to='/movies' className={style.NavLink}><BsCameraReelsFill /> &nbsp; &nbsp; Movies</NavLink>
+        <NavLink to='/people' className={style.NavLink}><BsPeopleFill /> &nbsp; &nbsp; People</NavLink>
+        <NavLink to='/search' className={style.NavLink}><BiSearchAlt /> &nbsp; &nbsp; Search</NavLink>
+        <NavLink to='/trending' className={style.NavLink}><BiTrendingUp /> &nbsp; &nbsp; Trending</NavLink>
+        <NavLink to='/tv' className={style.NavLink}><BsDisplayFill /> &nbsp; &nbsp; Tv</NavLink>
       </nav>
     </>
   )
