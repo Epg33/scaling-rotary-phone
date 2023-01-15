@@ -13,7 +13,6 @@ function CellNav() {
   }
   return (
     <>
-      {/* <input  className={style.check} name="" id="check" /> */}
       <button onClick={()=>navState()} className={nav}>
         <div className={style.burguer}></div>
         <div className={style.burguer}></div>

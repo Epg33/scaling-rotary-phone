@@ -23,7 +23,7 @@
 
 .movie .info {
   height: 100%;
-  width: 100%;
+  width: 100%; 
   position: relative;
   display: flex;
   flex-direction: column;
@@ -46,4 +46,19 @@
 .movie:nth-child(1) img {
   height: 100%;
   width: 100%;
+}
+
+@media screen and (orientation: portrait) {
+  .movie, .movie:nth-child(1) {
+    grid-column: span 1;
+    width: 80vw;
+    height: 57.5vh;
+    padding: 0;
+  }
+  .movie .info {
+    bottom: 45px;
+  }
+  .movie img {
+    height: 60vh;
+  }
 }
