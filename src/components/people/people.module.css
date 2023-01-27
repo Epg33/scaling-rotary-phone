@@ -26,3 +26,9 @@
   scroll-behavior: smooth;
   padding-top: 5%;
 }
+
+@media screen and (orientation: portrait){
+  .people_container{ 
+    grid-template-columns: 1fr;
+  }
+}

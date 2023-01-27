@@ -2,6 +2,12 @@
   box-sizing: border-box;
   color: #eee;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 
 .loading_container {
   width: 100%;
@@ -25,4 +31,14 @@
   place-items: center;
   scroll-behavior: smooth;
   padding-top: 5%;
+}
+
+@media screen and (orientation: portrait) {
+  .movies_container{ 
+    grid-template-columns: 1fr;
+  } 
+  .nav {
+    padding-block: 10px;
+    margin-left: 60px;
+  }
 }

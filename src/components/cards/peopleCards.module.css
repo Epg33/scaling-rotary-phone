@@ -47,3 +47,18 @@
   height: 100%;
   width: 100%;
 }
+
+@media screen and (orientation: portrait) {
+  .person, .person:nth-child(1) {
+    grid-column: span 1;
+    width: 80vw;
+    height: 57.5vh;
+    padding: 0;
+  }
+  .person .info {
+    bottom: 45px;
+  }
+  .person img {
+    height: 60vh;
+  }
+}

@@ -37,3 +37,9 @@
 .nav_button {
   color: #111;
 }
+
+@media screen and (orientation: portrait) {
+  .content_container{ 
+    grid-template-columns: 1fr;
+  }
+}

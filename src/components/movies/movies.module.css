@@ -73,4 +73,7 @@
   .movies_container { 
     grid-template-columns: 1fr;   
   }
+  .nav {
+    margin-top: 60px;
+  }
 }

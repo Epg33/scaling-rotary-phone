@@ -11,6 +11,7 @@
   height: 50px;
   background-color: transparent;
   border: none;
+  margin-bottom: 60px;
 }
 
 .burguer {
@@ -62,6 +63,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 20px;
+  padding-top: 80px;
   background-color: rgba(12, 12, 12, 0.425);
   right: 100vw;
   z-index: 10000;

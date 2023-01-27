@@ -21,27 +21,29 @@ function Tv() {
   if(!content) return <div className={style.loading_container}><Loading /></div>
   return (
     <>
-      <nav className={style.nav}>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('now_playing')}}>Now Playing</button>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('upcoming')}}>Upcoming</button>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('popular')}}>Popular</button>
-        <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('top_rated')}}>Top Rated</button>
-      </nav>
-      <section className={style.movies_container}>
-          {
-            content.map((movie, index)=>{
-              if(index>19){
-                return movie.map((peli, index)=>{
-                  return <Cards peli={{peli}} key={index}/>
-                })
-              }
-              return <Cards movie={{movie}} key={index}/>
-            })
-          }
-        <InView as='div' onChange={(inView, entry)=>{inView ? setNumPage(numPage+1) : null;}}>
-          <Loading />
-        </InView>
-      </section>
+      <div className={style.container}>
+        <nav className={style.nav}>
+          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('airing_today')}}>Airing today</button>
+          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('on_the_air')}}>On the air</button>
+          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('popular')}}>Popular</button>
+          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('top_rated')}}>Top Rated</button>
+        </nav>
+        <section className={style.movies_container}>
+            {
+              content.map((movie, index)=>{
+                if(index>19){
+                  return movie.map((peli, index)=>{
+                    return <Cards peli={{peli}} key={index}/>
+                  })
+                }
+                return <Cards movie={{movie}} key={index}/>
+              })
+            }
+          <InView as='div' onChange={(inView, entry)=>{inView ? setNumPage(numPage+1) : null;}}>
+            <Loading />
+          </InView>
+        </section>
+      </div>
     </>
   )
 }

@@ -20,13 +20,12 @@ function CellNav() {
       </button>
       <nav className={style.nav}>
         <h3>React Movies</h3>
-        <NavLink to='/' className={style.NavLink}><BsFillHouseFill /> &nbsp; &nbsp; Home</NavLink>
-        <NavLink to='/genres' className={style.NavLink}><MdCategory /> &nbsp; &nbsp; Genres</NavLink>
-        <NavLink to='/movies' className={style.NavLink}><BsCameraReelsFill /> &nbsp; &nbsp; Movies</NavLink>
-        <NavLink to='/people' className={style.NavLink}><BsPeopleFill /> &nbsp; &nbsp; People</NavLink>
-        <NavLink to='/search' className={style.NavLink}><BiSearchAlt /> &nbsp; &nbsp; Search</NavLink>
-        <NavLink to='/trending' className={style.NavLink}><BiTrendingUp /> &nbsp; &nbsp; Trending</NavLink>
-        <NavLink to='/tv' className={style.NavLink}><BsDisplayFill /> &nbsp; &nbsp; Tv</NavLink>
+        <NavLink onClick={()=>setNav(style.burguer_container)} to='/' className={style.NavLink}><BsFillHouseFill /> &nbsp; &nbsp; Home</NavLink>
+        <NavLink onClick={()=>setNav(style.burguer_container)} to='/movies' className={style.NavLink}><BsCameraReelsFill /> &nbsp; &nbsp; Movies</NavLink>
+        <NavLink onClick={()=>setNav(style.burguer_container)} to='/people' className={style.NavLink}><BsPeopleFill /> &nbsp; &nbsp; People</NavLink>
+        <NavLink onClick={()=>setNav(style.burguer_container)} to='/search' className={style.NavLink}><BiSearchAlt /> &nbsp; &nbsp; Search</NavLink>
+        <NavLink onClick={()=>setNav(style.burguer_container)} to='/trending' className={style.NavLink}><BiTrendingUp /> &nbsp; &nbsp; Trending</NavLink>
+        <NavLink onClick={()=>setNav(style.burguer_container)} to='/tv' className={style.NavLink}><BsDisplayFill /> &nbsp; &nbsp; Tv</NavLink>
       </nav>
     </>
   )

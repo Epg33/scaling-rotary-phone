@@ -8,7 +8,6 @@ function Nav() {
   return (
     <nav className={style.nav}>
       <Link icon={<BsFillHouseFill />} to='/' text='Home' />
-      <Link icon={<MdCategory />} to='/genres' text='Genres' />
       <Link icon={<BsCameraReelsFill />} to='/movies' text='Movies' />
       <Link icon={<BsPeopleFill />} to='/people' text='People' />
       <Link icon={<BiSearchAlt />} to='/search' text='Search'/>
