@@ -16,7 +16,7 @@
   position: absolute;
   z-index: 1;
   height: 100vh;
-  width: 94.5%;
+  width: 94.2%;
   opacity: .4;
   overflow: hidden;
 }
@@ -78,8 +78,8 @@
 }
 
 .seasons {
-  height: 20vh;
-  width: 100%;
+  height: 40vh;
+  width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,7 +127,7 @@
   height: 100%;
   box-shadow: 5px 5px 5px rgb(192, 192, 192), -3px -2px 5px rgb(192, 192, 192);
   border-radius: 8px;
-  width: 40%;
+  width: 10vw;
   padding: 5px;
 }
 
@@ -139,4 +139,48 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (orientation: portrait){
+  .body, .content {
+    flex-direction: column;
+    overflow-y: scroll;
+    align-items: center;
+    height: fit-content;
+  }
+  .content {
+    margin-top: 60px;
+    width: auto;
+  }
+  .entitled, .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .aceptation {
+    justify-content: flex-start;
+    width: 80%;
+  }
+  .seasons, .actual_seasons {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: transparent;
+    color: #eee;
+    border: none;
+  }
+  .seasons .h4{
+    color: #eee;
+  }
+  .season {
+    background-color: #eee;
+    width: 100%;
+  }
+  .bg_image {
+    position: fixed;
+    height: 100vh;
+    width: auto;
+    place-self: center;
+  }
 }

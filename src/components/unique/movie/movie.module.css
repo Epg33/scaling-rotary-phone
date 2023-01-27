@@ -16,7 +16,7 @@
   position: absolute;
   z-index: 1;
   height: 100vh;
-  width: 94.5%;
+  width: 94.2%;
   opacity: .4;
   overflow: hidden;
 }
@@ -61,7 +61,7 @@
 
 .entitled .dg_info, .entitled .dg_info ul{
   display: flex;
-  gap: 10px;
+  gap: 10px; 
 }
 
 .aceptation {
@@ -74,4 +74,29 @@
   justify-content: center;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+@media screen and (orientation: portrait){
+  .body, .content{
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .content{
+    padding-top: 60px;
+  }
+  .bg_image {
+    position: fixed;
+    width: auto;
+    height: 100vh;
+    place-self: center;
+  }
+  .info{
+    gap: 10px;
+  }
+  .dg_info {
+    flex-direction: column;
+  }
+  .aceptation {
+    font-size: 1.5rem;
+  }
 }

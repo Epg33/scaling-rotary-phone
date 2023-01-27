@@ -19,7 +19,7 @@ function People() {
   if(!content) return <div className={style.loading_container}><Loading /></div>
   return (
     <>
-      <section style={{display: 'flex', flexDirection: 'column', width: '100%'}}>
+      <section className={style.container}>
         <div className={style.people_container}>
           {
             content.map((person, index)=>{

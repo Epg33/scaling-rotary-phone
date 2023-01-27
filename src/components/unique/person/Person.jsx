@@ -30,7 +30,7 @@ const Person = () => {
             {content.deathday? <span>{content.deathday}</span>: null}
             <p>{content.gender === 1 ? 'Female' : 'Male'}, known for {content.known_for_department}</p>
           </div>
-          <p>born in: {content.place_of_birth}</p>
+          <p className={style.born}>born in: {content.place_of_birth}</p>
         </div>
         {aditionalContent.data.cast.length > 0 ? <div className={style.container}>
           <h4>Played Characters</h4>

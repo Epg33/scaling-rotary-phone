@@ -39,3 +39,9 @@
   font-size: 0.5em;
   text-anchor: middle;
 }
+
+@media screen and (orientation: portrait){
+  .single_chart {
+    width: 20%;
+  }
+}
