@@ -2,7 +2,6 @@ import style from './nav.module.css'
 import { NavLink } from 'react-router-dom'
 import { BsFillHouseFill, BsCameraReelsFill, BsPeopleFill, BsDisplayFill} from 'react-icons/bs'
 import {BiSearchAlt, BiTrendingUp} from 'react-icons/bi'
-import {MdCategory} from 'react-icons/md'
 
 function Nav() {
   return (

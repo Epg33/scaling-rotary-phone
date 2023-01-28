@@ -2,6 +2,7 @@ import style from "./search.module.css";
 import { useState, useEffect, useRef } from "react";
 import { InView } from "react-intersection-observer";
 import { searching } from "../../services/fetch";
+import { BiSearchAlt } from 'react-icons/bi'
 import Cards from '../cards/Cards'
 import PeopleCards from '../cards/PeopleCards'
 import Loading from '../loading/Loading'
@@ -25,14 +26,17 @@ function Search() {
   if(!content) return <div className={style.loading_container}><Loading /></div>
   return (
     <section className={style.body}>
-      <nav>
-        <div>
-          <input type="text" ref={queryText}/>
+      <nav className={style.nav}>
+        <div className={style.input_container}>
+            <BiSearchAlt />
+          <input type="text" ref={queryText} placeholder='search'/>
           <button onClick={()=>{setContent(null);setPage(1);setQuery(queryText.current.value)}}>Search</button>
         </div>
-        <button onClick={()=>{setContent(null);setPage(1);setType('multi')}}>All</button>
-        <button onClick={()=>{setContent(null);setPage(1);setType('movie')}}>Only Movies </button>
-        <button onClick={()=>{setContent(null);setPage(1);setType('tv')}}>Only TV</button>
+        <div className={style.buttons_container}>
+          <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('multi')}}>All</button>
+          <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('movie')}}>Only Movies </button>
+          <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('tv')}}>Only TV</button>
+        </div>
       </nav>
       <div className={style.content_container}>
         {
