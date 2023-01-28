@@ -24,15 +24,21 @@ function Trending() {
     <>
       <section className={style.body}>
         <nav className={style.nav}>
-          <div>
-            <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('all')}}>All</button>
-            <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('movie')}}>Only Movies</button>
-            <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('tv')}}>Only Tv</button>
-            <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('person')}}>Only Person</button>
+          <div className={style.wrapper}>
+            <p>Options:</p>
+            <div className={style.options}>
+              <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('all')}}>All</button>
+              <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('movie')}}>Only Movies</button>
+              <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('tv')}}>Only Tv</button>
+              <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setType('person')}}>Only Person</button>
+            </div>
           </div>
-          <div>
-            <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setTime('week')}}>This Week</button>
-            <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setTime('day')}}>This Day</button>
+          <div className={style.wrapper}>
+            <p>Time frame:</p>
+            <div className={style.frame}>
+              <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setTime('week')}}>This Week</button>
+              <button className={style.nav_button} onClick={()=>{setContent(null);setPage(1);setTime('day')}}>This Day</button>
+            </div>
           </div>
         </nav>
         <div className={style.content_container}>

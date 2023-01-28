@@ -22,12 +22,14 @@ function Tv() {
   return (
     <>
       <div className={style.container}>
-        <nav className={style.nav}>
-          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('airing_today')}}>Airing today</button>
-          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('on_the_air')}}>On the air</button>
-          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('popular')}}>Popular</button>
-          <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('top_rated')}}>Top Rated</button>
-        </nav>
+        <div className={style.wrapper}>
+          <nav className={style.nav}>
+            <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('airing_today')}}>Airing today</button>
+            <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('on_the_air')}}>On the air</button>
+            <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('popular')}}>Popular</button>
+            <button className={style.nav_button} onClick={()=>{setContent(null);setQuery('top_rated')}}>Top Rated</button>
+          </nav>
+        </div>
         <section className={style.movies_container}>
             {
               content.map((movie, index)=>{
