@@ -12,7 +12,6 @@ const Movie = () => {
   useEffect(()=>{
     const fetching = async () =>{
       const res = await fetchEspecificMovie(params.id)
-      console.log(res);
       setContent(res);
     }
     fetching()

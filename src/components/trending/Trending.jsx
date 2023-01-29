@@ -14,7 +14,6 @@ function Trending() {
   useEffect(()=>{
     const fetching = async () => {
       const res = await fetchingTrends(content, page, type, time);
-      console.log(res);
       setContent([...res]);
     }
     fetching()

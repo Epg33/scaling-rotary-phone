@@ -11,7 +11,6 @@ const Person = () => {
   useEffect(()=>{
     const fetching = async () => {
       const [res, add] = await fetchEspecificPerson(params.id);
-      console.log(add);
       setContent(res)
       setAditionalContent(add)
     }

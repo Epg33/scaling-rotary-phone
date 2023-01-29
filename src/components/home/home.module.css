@@ -1,14 +1,97 @@
-/*
-#0a3063	(10,48,99)
-#143b6e	(20,59,110)
-#15487b	(21,72,123)
-#062e63	(6,46,99)
-#103970	(16,57,112)
-*/
+*{
+  text-decoration: none;
+  color: #eee;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
 
 .main {
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   background-color: #0a3063;
   color: #efefef;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.loading_container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.main h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.principal {
+  height: 75vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.principal_container{
+  height: 100%;
+}
+
+.principal_container img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.principal_info {
+  position: relative;
+  height: 60px;
+  bottom: 10%;
+  z-index: 10;
+  border-radius: 15px;
+  padding-left: 2%;
+  background-image: linear-gradient(180deg, transparent, #111);
+}
+
+.movies {
+  width: 100%;
+}
+
+.movies:last-child {
+  margin-bottom: 50px;
+}
+
+.movies div {
+  width: 98%;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.movies div a h4 {
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.movies div::-webkit-scrollbar {
+  background-color: transparent;
+  height: 5px;
+}
+
+.movies div::-webkit-scrollbar-thumb {
+  height: 5px;
+  background-color: rgb(170, 169, 169);
+}
+
+.movies div::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(104, 103, 103);
 }

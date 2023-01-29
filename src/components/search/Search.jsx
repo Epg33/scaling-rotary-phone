@@ -17,7 +17,6 @@ function Search() {
   useEffect(()=>{
     const fetching = async () => {
       const res = await searching(content, page, type, query);
-      console.log(res);
       setContent([...res]);
     };
     fetching();
