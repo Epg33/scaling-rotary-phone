@@ -54,7 +54,7 @@ const Home = () => {
         <div>
           {
             tv ? tv.map((show, index)=>{
-              return <NavLink to={`/show/${show.id}`} key={index}>
+              return <NavLink to={`/tv/${show.id}`} key={index}>
                 <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${show.poster_path}`} alt={`poster for the ${show.name} movie`}/> 
                 <h4>{show.name}</h4>
               </NavLink>
